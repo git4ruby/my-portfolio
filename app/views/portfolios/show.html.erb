@@ -1,4 +1,4 @@
-<%= image_tag @portfolio.main_image %>
+<%= image_tag @portfolio.main_image unless @portfolio.main_image.nil? %>
 
 <h1>
   <%= @portfolio.title %>
@@ -13,4 +13,5 @@
 </p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+<%= link_to "Delete Post", portfolio_path(@portfolio), method: :delete, data: {confirm: 'Are you sure?'}  %> |
 <%= link_to 'Back', portfolios_path %>
